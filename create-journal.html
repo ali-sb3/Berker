@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Create Journal</title>
+  <link rel="stylesheet" href="create-journal.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Create Journal</h2>
+      <form action="/api/v1/journals" method="post">
+        <div class="form-group">
+          <label for="main-title">Journal Title</label>
+          <input
+            id="main-title"
+            type="text"
+            name="title"
+            placeholder="Enter title"
+            minlength="3"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="journal-category">Journal Category</label>
+          <select id="journal-category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="idea">Idea</option>
+            <option value="note">Note</option>
+            <option value="goal">Goal</option>
+            <option value="habit">Habit</option>
+            <option value="memory">Memory</option>
+            <option value="mood">Mood</option>
+            <option value="event">Event</option>
+            <option value="task">Task</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="journal-entry">Journal Entry</label>
+          <textarea
+            id="journal-entry"
+            name="entry"
+            cols="30"
+            rows="5"
+            placeholder="Write your thoughts..."
+            minlength="10"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="login-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
